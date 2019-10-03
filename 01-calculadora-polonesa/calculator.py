@@ -1,7 +1,7 @@
 
 # Calculadora notação polonesa inversa
 # para rodar no terminal
-#   python -m teste
+#   python -m calculator
 
 
 def add(a, b):
@@ -47,6 +47,7 @@ def calculate(user_input):
     return operands, operators
 
 
-while True:
-    user_input = input('Input - ')
-    print(calculate(user_input))
+if __name__ == '__main__':
+    while True:
+        user_input = input('Input - ')
+        print(calculate(user_input))
