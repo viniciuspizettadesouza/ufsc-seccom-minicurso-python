@@ -8,21 +8,22 @@ def add(a, b):
 
 
 def sub(a, b):
-    return a-b
+    return a - b
 
 
 def mul(a, b):
-    return a*b
+    return a * b
 
 
 def div(a, b):
-    return a/b
+    return a / b
 
 
 def binary_op(f):
     def inner(stack):
         if len(stack) < 2:
-            raise NotEnoughValuesError("Stack doed not have enough operands.")
+            raise NotEnoughValuesError("Stack does not have enough operands.")
+
         a = stack.pop()
         b = stack.pop()
         return f(a, b)
@@ -35,7 +36,8 @@ def unary_op(f):
             a = stack.pop()
         except IndexError as e:
             raise NotEnoughValuesError(
-                "Stack doed not have enough operands.") from e
+                "Stack does not have enough operands.") from e
+
         return f(a)
     return inner
 

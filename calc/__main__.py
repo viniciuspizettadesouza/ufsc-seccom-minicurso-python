@@ -1,12 +1,14 @@
-
 from .calculator import calculate
 from .errors import CalculatorError
 
 while True:
     try:
-        user_input = input('Input - ')
+        user_input = input('>> ')
     except (KeyboardInterrupt, EOFError):
-        print(calculate(user_input))
+        print()
         break
+
+    try:
+        print(calculate(user_input))
     except CalculatorError as e:
         print(e)
